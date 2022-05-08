@@ -5,8 +5,7 @@
 - What type of organization? Sequential or not?
 - How to search, insert, remove?
 - Which operation is most important?
-- What is the asymptotic complexity?
-- [Big-O notation](./big-o/) - Generic and can organize and relate elements.
+- What is the asymptotic complexity? [Big-O notation](./big-o/)
 
 
 ## Structures: 
