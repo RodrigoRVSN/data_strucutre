@@ -1,7 +1,7 @@
 # Data Structures
 
-- Stacks
-- Queues
-- Lists
-- Trees
-- Graphs
+- [Stacks](./stack/)
+- [Queues](./queues/)
+- [Lists](./lists/)
+- [Trees](./trees/)
+- [Graphs](./graphs/)
