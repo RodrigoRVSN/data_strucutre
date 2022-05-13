@@ -95,7 +95,7 @@ class Queue:
 
   def clear(self):
     while not self.isEmpty():
-      value = self.dequeueFront()
+      self.dequeueFront()
       
   def __str__(self):
     helperQueue = Queue()

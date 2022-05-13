@@ -4,8 +4,6 @@
 
 ![Queue Example](examples/queue-example.png)
 
-- With a **Circular queue**, if the next element has no space, the new position will be the index 0 (first position).
-
 ## Conditions:
 
 - `size = 0` → empty queue
@@ -14,12 +12,35 @@
 
 ___
 
-# Dynamic queue
+# Static circular queue
 
-- The queue size is **not fixed**. We use a **node** to carry the **memory** **address** of the elements.
+- The queue size is **fixed** and **allocated** before. 
+- The **enqueue increments** the index of the last element and **insert** the data in this **new index** (rear).
+- The **dequeue** increments the **front position**
+- If insert value in the last index, we move this new element in the first index (0), instead de last (capacity). 
 
 ___
 
-# Deque
+![Queue Example](examples/queue-circular-static-example.png)
 
-- In deque we can **insert** **and** **delete** in the **front** **and** the **rear,** like a structure with 2 queues in a inverse side.
+___
+
+# Dynamic queue
+
+- The queue size is **not fixed**. 
+- We use a **node** to carry the **memory** **address** of the elements.
+
+___
+
+![Queue Example](examples/queue-dynamic-example.png)
+
+___
+
+# Deque queue
+
+- In deque we can **insert** **and** **delete** in the **front** **and** the **rear**.
+- Looks like a structure with 2 queues in a inverse side.
+
+___
+
+![Queue Example](examples/queue-deque-example.png)
