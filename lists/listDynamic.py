@@ -1,3 +1,9 @@
+class Node:
+    def __init__(self, data = None, next = None, previous = None):
+      self.data = data
+      self.next = next
+      self.previous = previous
+
 class List:
     def __init__(self):
       self.head = None
@@ -129,3 +135,26 @@ class List:
         items += str(nodeTemporary.data) + ' '
         nodeTemporary = nodeTemporary.next
       return items
+
+
+####################################################################
+
+list = List()
+
+list.pushHead(2)
+list.pushHead(1)
+list.pushTail(3)
+list.pushTail(5)
+list.insert(4, 3)
+print('List (insert): ' + str(list))
+print('Search: ' + str(list.search(5)))
+
+list.removeTail()
+list.removeHead()
+print('List (removeTail, removeHead): ' + str(list))
+
+list.remove(2)
+print('List (remove()): ' + str(list))
+
+list.removeTail()
+print('List (removeTail): ' + str(list))
