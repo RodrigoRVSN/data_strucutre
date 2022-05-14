@@ -1,7 +1,7 @@
 # Lists
 
 - The elements must have a **logic and fisic order** between them.
-- Each element is called **Node** and we use a array.
+- Each element is called **Node** and we use as a array.
 
 ![Exemplo lista](examples/list-example.png)
 
@@ -18,13 +18,13 @@ ___
 - Use a array
 - Elements have a **logic order** to storage
 - **Don’t** need to **move** other values
-- Each elements **points** the **next** value
+- Each elements **points** to the **next** value
 
 ___
 
 ## Allocation no sequencial and dynamic
 
-- **chained allocation**
+- **Chained allocation**
 - **Order** by **logic** order
 - Each node have the **data** and the **next** value (by **pointer**)
 - Indicates the **first** **element** and **follow** the **next** property

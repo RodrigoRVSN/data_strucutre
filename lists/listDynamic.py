@@ -1,9 +1,3 @@
-class Node:
-    def __init__(self, data = None, next = None, previous = None):
-      self.data = data
-      self.next = next
-      self.previous = previous
-
 class List:
     def __init__(self):
       self.head = None
@@ -19,11 +13,11 @@ class List:
         self.tail = self.head
 
       else:
-        # o previous do head anterior agora aponta para o novo nó
+        # actual head previous is null and will be the temporary node
         self.head.previous = tempNode
-        # next do novo nó será o head antes de ser mudado
+        # next of the new node receives the actual head
         tempNode.next = self.head
-        # o novo head recebe o novo nó
+        # new head receives tempNode after connections
         self.head = tempNode
       self.size += 1
 
@@ -34,22 +28,24 @@ class List:
       if self.head is None:
         self.head = tempNode
         self.tail = self.head
-
+      
       else:
-        # próximo item antes de atualizar é o novo nó
+        # actual tail next is null and will be the temporary node
         self.tail.next = tempNode
-        # vincula o anterior com o último elemento
+        # previous of the new node receives the actual tail
         tempNode.previous = self.tail
-        # atribui após o valor do nó após o processo de vinculações entre nós
+        # new tail receives tempNode after connections
         self.tail = tempNode
+
       self.size += 1
 
-    # Insert in a position
+    # Insert value in a X position
     def insert(self, data, position):
       tempNode = Node(data)
       helperHead = self.head
       for iterator in range(1, position):
         helperHead = helperHead.next
+        
       tempNode.next = helperHead.next
       tempNode.previous = helperHead
       helperHead.next.previous  = tempNode
@@ -74,28 +70,34 @@ class List:
     # Remove the last value
     def removeTail(self):
       temp = self.tail
-      # o próximo depois do anterior do último (antigo último) passa a ser None
+      # the next after the tail previous will be now None
       self.tail.previous.next = None
-      # o último agora é o anterior
+      # the new tail value will be her previous Node
       self.tail = self.tail.previous
       self.size -= 1
       return temp
 
-    # Remove a value in x position
+    # Remove a value in a X position
     def remove(self, position):
       helperHead = self.head
       iterator = 1
+
+      # find the position
       while (iterator <= position):
         helperHead = helperHead.next
         iterator += 1
 
+      # if is the first element, just move to the next
       if position == 0:
         self.head = self.head.next
+      # if is not the first element, change the next of the previous
       else:
         helperHead.previous.next = helperHead.next
       
+      # if is the last element, just move to the previous
       if position == self.size - 1:
         self.tail = self.tail.previous
+      # if is not the last element, change the previous of the next 
       else:
         helperHead.next.previous = helperHead.previous
       self.size -= 1
@@ -104,10 +106,12 @@ class List:
     def search(self, value):
       tempNode = self.head
       tempValue = tempNode.data
+
       if (tempValue == value):
         return 0
 
       index = 1
+      # go throught each next element and return incremented index (position)
       while tempNode.next is not None:
         tempNode = tempNode.next
         tempValue = tempNode.data
@@ -125,23 +129,3 @@ class List:
         items += str(nodeTemporary.data) + ' '
         nodeTemporary = nodeTemporary.next
       return items
-
-list = List()
-
-list.pushHead(2)
-list.pushHead(1)
-list.pushTail(3)
-list.pushTail(5)
-list.insert(4, 3)
-print('List (insert): ' + str(list))
-print('Search: ' + str(list.search(5)))
-
-list.removeTail()
-list.removeHead()
-print('List (removeTail, removeHead): ' + str(list))
-
-list.remove(2)
-print('List (remove()): ' + str(list))
-
-list.removeTail()
-print('List (removeTail): ' + str(list))
