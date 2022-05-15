@@ -19,7 +19,7 @@
 
 ___
 
-## Binary Tree
+# Binary Tree
 
 - A binary tree has **bellow** **each node,** **maximum** of **2 subtrees.**
 - Each node has **1 key** and **2 pointers**, one for the subtree in **left** and one for subtree in **right**
@@ -27,3 +27,27 @@ ___
 ___
     
 ![Ordering Tree](examples/tree-ordering-example.png)
+
+___
+
+# AVL Tree
+
+- This method is used to **auto balancing** the trees with **rotations**, making the module of `heightLeft - heightRight` be **less than 1** (balanced). In AVL trees, we register the **node height**.
+
+- **Right rotation**: The **left** subtree is heavy
+- **Left rotation**: The **right** subtree is heavy
+- **Left Right rotation**: The **Node** heavy in **left** and **subtree** heavy in **right**. Makes a **left rotation** and a **right rotation**.
+- **Right Left rotation**: The **node** heavy in **right** and **subtree** heavy in **left**. Makes a **right rotation** and a **left rotation**.
+
+___
+
+![Tree Avl Rotations](examples/tree-avl-rotations-example.png)
+
+___
+
+### Being **B** the **Imbalance Factor** (`leftHeight - rightHeight`):
+
+- `B > 1` and `key < root.left.key`: **Right rotation**.
+- `B < -1` and `key > root.right.key`: **Left rotation**.
+- `B > 1` and `key > root.left.key`: **Left Right rotation**.
+- `B > -1` and `key < root.right.key`: **Right Left rotation**.
