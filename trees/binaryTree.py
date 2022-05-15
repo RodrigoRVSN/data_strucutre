@@ -15,13 +15,16 @@ class Tree:
     self._add(value, self.root)
 
   def _add(self, value, node):
+    # if the value is bigger than node, insert in the right
     if value > node.data:
       if node.right is None:
         node.right = Node(value)
+      # go throught right node if the right node is not None
       else:
         self._add(value, node.right)
       return
-
+    
+    # if the value is lower than node, insert in the left
     if node.left is None:
       node.left = Node(value)
     else:
@@ -34,6 +37,7 @@ class Tree:
     self._printTree(self.root)
 
   def _printTree(self, node):
+    # print left and right until be None
     if node is not None:
       self._printTree(node.left)
       print(str(node.data) + ' ')
@@ -41,18 +45,23 @@ class Tree:
   
   def search(self, value):
     if self.root is None:
-      print('The tree is empty')
+      print('Tree Error: The tree is empty')
       return
 
     actual = self.root
     while actual.data != value:
+      # if value is bigger than node data, seach in right
       if value > actual.data:
         actual = actual.right
+      # if value is lower than node data, seach in left
       else:
         actual = actual.left
       if actual is None:
         return False
     return True
+
+
+######################################################################
 
 tree = Tree()
 tree.printTree()
