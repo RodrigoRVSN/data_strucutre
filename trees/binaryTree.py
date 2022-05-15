@@ -4,7 +4,7 @@ class Node:
     self.left = left
     self.right = right
 
-class Tree:
+class BinaryTree:
   def __init__(self):
     self.root = None
 
@@ -30,22 +30,75 @@ class Tree:
     else:
       self._add(value, node.left)
 
-  def printTree(self):
+  # print in root -> left -> right (hierarchy)        
+  def strPreorder(self, node = -1, info = ''):
     if self.root is None:
-      print('The tree is empty')
-      return
-    self._printTree(self.root)
+      return ' '
+            
+    if node == -1:
+      node = tree.root
+            
+    if node.data is not None:
+                
+      info += ' ' + str(node.data)
+                
+      if node.left is not None: 
+        info += self.strPreorder(node.left)
+                
+      if node.right is not None:
+        info += self.strPreorder(node.right)
+                    
+      return info
+    else:
+      return info
 
-  def _printTree(self, node):
-    # print left and right until be None
-    if node is not None:
-      self._printTree(node.left)
-      print(str(node.data) + ' ')
-      self._printTree(node.right)
+  # print in -> left -> root -> right (crescent)
+  def strInorder(self, node = -1, info = ''):
+    if self.root is None:
+      return ' '
+            
+    if node == -1:
+      node = tree.root
+            
+    if node.data is not None:
+      
+      if node.left is not None: 
+        info += self.strInorder(node.left)
+      
+      info += ' ' + str(node.data) 
+
+      if node.right is not None:
+        info += self.strInorder(node.right)
+      return info
+    else:
+      return info
+            
+  # print in -> left -> right -> root (down to up)
+  def strPostorder(self, node = -1, info = ''):
+    if self.root is None:
+      return ' '
+            
+    if node==-1:
+      node = tree.root
+            
+    if node.data is not None:
+                              
+      if node.left is not None: 
+        info += self.strPostorder(node.left)
+                
+      if node.right is not None:
+        info += self.strPostorder(node.right)
+        
+      info += ' ' + str(node.data)
+                    
+      return info
+    else:
+      return info
+            
   
   def search(self, value):
     if self.root is None:
-      print('Tree Error: The tree is empty')
+      print('BinaryTree Error: The tree is empty')
       return
 
     actual = self.root
@@ -63,13 +116,18 @@ class Tree:
 
 ######################################################################
 
-tree = Tree()
-tree.printTree()
+tree = BinaryTree()
 
-tree.insert(2)
-tree.insert(5)
-tree.insert(1)
+tree.insert(17)
+tree.insert(6)
+tree.insert(35)
 tree.insert(4)
-tree.insert(3)
-tree.printTree()
-print('Item encontrado: ', tree.search(6))
+tree.insert(14)
+tree.insert(23)
+tree.insert(48)
+
+print("Pre Order: ", tree.strPreorder())
+print("Intra Order: ", tree.strInorder())
+print("Pos Order: ", tree.strPostorder())
+
+print('Found item: ', tree.search(6))
