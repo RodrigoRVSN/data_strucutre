@@ -10,11 +10,11 @@
 
 - **O(n²) - Exponencial** → Repetition inside repetition. Will repeat each element again. **Example**: `FOR` inside `FOR`.
 
+- **O(n³)**
+
 - **O(2^n)**
 
 - **O(3^n)**
-
-- **O(n³)**
 
 - **O(n!) - Fatorial** -> The worst.  **Example**: Recursive function. 
 
