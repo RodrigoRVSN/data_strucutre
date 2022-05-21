@@ -49,6 +49,7 @@ class List:
     def insert(self, data, position):
       tempNode = Node(data)
       helperHead = self.head
+      
       for iterator in range(1, position):
         helperHead = helperHead.next
         

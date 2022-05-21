@@ -1,9 +1,20 @@
-# Lists
+# 🔗 Lists
 
 - The elements must have a **logic and fisic order** between them.
 - Each element is called **Node** and we use as a array.
+- Linked list
+
+___
 
 ![Exemplo lista](examples/list-example.png)
+
+___
+
+## 🤔 Examples of uses
+
+- Can be implemented to make linked `Stacks` and `Queues` 
+- Browser history (previous and next page)
+- **RL** example: Image viewer, music player.
 
 ___
 

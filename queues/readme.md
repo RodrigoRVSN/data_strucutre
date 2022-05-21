@@ -1,8 +1,20 @@
-# Queues
+# ➡️ Queues
 
-- **FIFO** (**F**irst **I**n, **F**irst **O**ut). **Example**: Real queues, like in a restaurant or a party.
+- The **first** element to **enter**, is the **first** to go **out**.
+- **FIFO** (**F**irst **I**n, **F**irst **O**ut).
 
 ![Queue Example](examples/queue-example.png)
+
+___
+
+## 🤔 Examples of uses
+
+- Mail queues
+- Buffers
+- Async function
+- **RL** example: Real queues, like in a restaurant or a party.
+
+___
 
 ## Conditions:
 
@@ -14,10 +26,10 @@ ___
 
 # Static circular queue
 
-- The queue size is **fixed** and **allocated** before. 
+- The queue size is **fixed** and is **allocated** before. 
 - The **enqueue increments** the index of the last element and **insert** the data in this **new index** (rear).
-- The **dequeue** increments the **front position**
-- If insert value in the last index, we move this new element in the first index (0), instead de last (capacity). 
+- The **dequeue** increments the **front position** (get the next element)
+- If insert value in the last index, we move this new element in the first index (0), instead the last (capacity). 
 
 ___
 
@@ -27,8 +39,8 @@ ___
 
 # Dynamic queue
 
-- The queue size is **not fixed**. 
-- We use a **node** to carry the **memory** **address** of the elements.
+- The queue size is **not fixed** and we don't have a overflow. 
+- We use a **node** to carry the **memory address** of the elements.
 
 ___
 

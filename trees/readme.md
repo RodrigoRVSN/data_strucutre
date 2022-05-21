@@ -1,4 +1,4 @@
-# Trees
+# 🎄 Trees
 
 - Trees has similar to the **node** **structure** of lists
 - The **principal** node is called **Root**
@@ -6,6 +6,19 @@
 - Each node has a node pointing to him
 
 ![Tree](examples/tree-example.png)
+
+
+___
+
+## 🤔 Examples of uses
+
+- HTML structure
+- Folders
+- Interfaces
+- **RL** example: a tree.
+
+___
+
 
 
 - All nodes has **0 or more children**
@@ -19,9 +32,15 @@
 
 ___
 
+# Types of Search
+
+- **Post order:** `left -> right -> root` (down to up)
+- **Pre order:** `root -> left -> right` (hierarchy) 
+- **In order:** `left -> root -> right` (crescent)
+
 # Binary Tree
 
-- A binary tree has **bellow** **each node,** **maximum** of **2 subtrees.**
+- A binary tree has **bellow each node, maximum** of **2 subtrees.**
 - Each node has **1 key** and **2 pointers**, one for the subtree in **left** and one for subtree in **right**
 
 ___

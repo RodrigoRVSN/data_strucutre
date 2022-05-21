@@ -12,13 +12,13 @@ class Queue:
             return
         
         else:
-            if self.front==-1:
+            if self.front == -1:
                 self.front = 0
                 self.rear = 0
             
             # if the last element is in the last indice, the new indice should be 0 (first index)
             # we could use too (rear + 1) % capacity
-            elif self.rear==self.capacity-1:
+            elif self.rear == self.capacity-1:
                 self.rear = 0
                 
             # if not, increment the position of the self.rear

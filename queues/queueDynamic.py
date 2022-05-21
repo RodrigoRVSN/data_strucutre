@@ -28,6 +28,7 @@ class Queue():
       self.rear = nodeTemporary
     self.size += 1
 
+  # remove the first element on the queue
   def dequeue(self):
     if self.isEmpty():
       print('ERROR: Queue empty')

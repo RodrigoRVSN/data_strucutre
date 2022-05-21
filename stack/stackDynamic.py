@@ -23,7 +23,7 @@ class Stack:
 
     def pop(self):
         if self.head is None:
-            print("Empty stack")
+            print("Stack underflow: Empty stack")
             return None
         
         # save the element in top of the list to return

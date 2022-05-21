@@ -4,36 +4,37 @@ class Stack:
     self.size = stackSize
     self.stack = [None] * stackSize
   
-  # Incrementa o tamanho da pilha e insere o novo valor
+  # Increments the size of itens inside the stack pre-sized and insert the value on new top with position incremented
   def push(self, value):
     self.top += 1
     self.stack[self.top] = value
 
-  # Remove o item do topo da lista e retorna seu valor
+  # Remove the item on the top of the stack 
   def pop(self):
-    if(self.top == -1):
+    if(self.isEmpty()):
+      print('Stack error: stack is empty!')
       return
     helper = self.stack[self.top]
     self.top -= 1
     return helper
 
-  # Cheio se o índice no topo + 1 for igual a capacidade informada no inicio
+  # If the top index is equal the size of the stack, is full
   def isFull(self):
     return self.top + 1 == self.size
 
-  # Vazio se possui seu valor inicial -1
+  # Empty if the top is -1
   def isEmpty(self):
     return self.top == -1
 
-  # Pega o elemento no topo da lista
+  # Peek the element on top
   def top(self):
     return self.stack[self.top]
 
-  # Pega o tamanho da lista + 1 por ter iniciado com -1 na instancia
+  # Get the stack size (plus 1 because of the -1 initial value)
   def stackSize(self):
     return str(self.top + 1)
   
-  # Clona a pilha, removendo os itens e depois devolve esses valores.
+  # Clone the stack, removing the values (pop) and pushing back to print
   def __str__(self):
     cloneStack = Stack(self.size)
 

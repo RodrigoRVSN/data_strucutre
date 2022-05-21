@@ -48,9 +48,7 @@ class BinaryTree:
       if node.right is not None:
         info += self.strPreorder(node.right)
                     
-      return info
-    else:
-      return info
+    return info
 
   # print in -> left -> root -> right (crescent)
   def strInorder(self, node = -1, info = ''):

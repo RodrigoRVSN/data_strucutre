@@ -18,9 +18,11 @@ class Queue:
   # add item in front of the queue
   def enqueueFront(self, value):
     nodeTemporary = Node(value)
+    
     if self.front is None:
       self.front = nodeTemporary
       self.rear = nodeTemporary
+
     else:
       # changes address of old front
       nodeTemporary.next = self.front
@@ -35,6 +37,7 @@ class Queue:
     if self.size == 0:
       self.front = nodeTemporary
       self.rear = nodeTemporary
+
     else:
       # changes address of old rear
       self.rear.next = nodeTemporary
@@ -63,13 +66,13 @@ class Queue:
     else:
       nodeRear = self.rear
       value = nodeRear.value
-      helperRear = self.front
+      helperFront = self.front
 
       # go through by the front until the next node is none to get the new rear
-      while helperRear.next is not None:
-        helperRear = helperRear.next
+      while helperFront.next is not None:
+        helperFront = helperFront.next
 
-      self.rear = helperRear
+      self.rear = helperFront
       self.size -= 1
       del nodeRear
       return value
@@ -78,17 +81,15 @@ class Queue:
     if self.isEmpty():
       print('ERROR: Queue empty')
       return None
-    else:
-      value = self.front.value
-      return value
+    value = self.front.value
+    return value
 
   def getRear(self):
     if self.isEmpty():
       print('ERROR: Queue empty')
       return None
-    else:
-      value = self.rear.value
-      return value
+    value = self.rear.value
+    return value
 
   def getSize(self):
     return self.size
@@ -112,6 +113,8 @@ class Queue:
       self.enqueueRear(value)
       
     return strQueue 
+
+######################################################################
 
 queue = Queue()
 queue.enqueueRear(5)
