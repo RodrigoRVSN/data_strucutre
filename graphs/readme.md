@@ -13,6 +13,7 @@ ___
 ## 🤔 Examples of uses
 
 - Social media (like Facebook)
+- Maps
 - Web pages
 - Subway
 
@@ -38,7 +39,7 @@ ___
 
 ## Adjacency list
 
-- Stack of **linked lists** with al the adjacents vertices.
+- Stack of **linked lists** with all the adjacents vertices.
 - **Disadvantage**: to know if a Edge (u, v) exists, we need to make a **search** in the list of adjacents.
   
 
@@ -50,7 +51,31 @@ ___
 
 - Best to small graphs
 - Use a **matrix format**, with a **V x V dimension** (Vertice x Vertice)
+- **1: adjacency** with the value
+- **0: no adjacency** with the value
 
 ![Adjacency List to Graphs](examples/graphs-matrix-list-example.png)
 
+___
 
+# Searchs
+
+## Depth-First Search - Stack
+
+- Similar to pre-order search in trees
+1. **Visit a adjacent** node **not visited** and push him on the stack.
+2. If **has not adjacents not visited**, pop the value
+3. If Rule 1 and Rule 2 is not the case, the search is finished. 
+
+![Depth Search](examples/graphs-depth-search-example.png)
+
+___ 
+
+## Breadth-First Search - Queue 
+
+1. **Visit a adjacent not visited, mark and push** on the queue.
+2. If **has not a adjacent node, dequeue**
+3. If Rule 1 and Rule 2 is not the case, the search is finished.
+   
+
+![Breadth Searc](examples/graphs-breadth-search-example.png)

@@ -116,13 +116,14 @@ class BinaryTree:
 
 tree = BinaryTree()
 
-tree.insert(17)
-tree.insert(6)
+tree.insert(1)
+tree.insert(50)
+tree.insert(44)
+tree.insert(5)
+tree.insert(32)
+tree.insert(8)
 tree.insert(35)
-tree.insert(4)
-tree.insert(14)
-tree.insert(23)
-tree.insert(48)
+tree.insert(51)
 
 print("Pre Order: ", tree.strPreorder())
 print("Intra Order: ", tree.strInorder())
