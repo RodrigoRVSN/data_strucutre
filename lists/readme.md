@@ -20,7 +20,9 @@ ___
 
 ## Insertion Sort
 
-- Receive a element and **reorganize** **other** **elements** to keep the new element (**best** case: **O(n)**, **worst** case: **O(nˆ2)**
+- Receive a element and **reorganize** **other** **elements** to keep the new element.
+- **Best case** is when all the elements are organized -> **O(n)**
+- **Worst case** is when the elements are unorganized -> **O(nˆ2)**
 
 ___
 
